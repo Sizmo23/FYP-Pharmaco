@@ -1,0 +1,27 @@
+com.example.pharmaco.app-jetified-play-services-basement-18.2.0-0 C:\Users\YOUSUF\.gradle\caches\transforms-3\062237f186c5f664c67529be130b3337\transformed\jetified-play-services-basement-18.2.0\res
+com.example.pharmaco.app-jetified-annotation-experimental-1.3.0-1 C:\Users\YOUSUF\.gradle\caches\transforms-3\165eece7ba9ba3d9013c8baa7fefd5d9\transformed\jetified-annotation-experimental-1.3.0\res
+com.example.pharmaco.app-jetified-firebase-common-20.4.2-2 C:\Users\YOUSUF\.gradle\caches\transforms-3\330b3574988ff1f051a81ef0f026a877\transformed\jetified-firebase-common-20.4.2\res
+com.example.pharmaco.app-jetified-window-java-1.0.0-beta04-3 C:\Users\YOUSUF\.gradle\caches\transforms-3\54e508a412de464a54ed5ee2d0b923f2\transformed\jetified-window-java-1.0.0-beta04\res
+com.example.pharmaco.app-browser-1.4.0-4 C:\Users\YOUSUF\.gradle\caches\transforms-3\583a0aa66ad496f8e0b511bd75641930\transformed\browser-1.4.0\res
+com.example.pharmaco.app-jetified-window-1.0.0-beta04-5 C:\Users\YOUSUF\.gradle\caches\transforms-3\653e18092846f91a76468f52789d0c14\transformed\jetified-window-1.0.0-beta04\res
+com.example.pharmaco.app-jetified-play-services-measurement-api-21.5.0-6 C:\Users\YOUSUF\.gradle\caches\transforms-3\6e5b1cd7256434ac4b9f06cbc641c941\transformed\jetified-play-services-measurement-api-21.5.0\res
+com.example.pharmaco.app-jetified-ads-adservices-1.0.0-beta05-7 C:\Users\YOUSUF\.gradle\caches\transforms-3\7248d914e6ea66d92ca71224cf642192\transformed\jetified-ads-adservices-1.0.0-beta05\res
+com.example.pharmaco.app-jetified-play-services-auth-20.7.0-8 C:\Users\YOUSUF\.gradle\caches\transforms-3\8b1f26d0da7d829d7200bed0e0cc85a1\transformed\jetified-play-services-auth-20.7.0\res
+com.example.pharmaco.app-jetified-play-services-base-18.0.1-9 C:\Users\YOUSUF\.gradle\caches\transforms-3\a1a69685671b5a43590c9f26b5fab3dc\transformed\jetified-play-services-base-18.0.1\res
+com.example.pharmaco.app-jetified-ads-adservices-java-1.0.0-beta05-10 C:\Users\YOUSUF\.gradle\caches\transforms-3\a2884b25e55712f93fb30b4b20f74a81\transformed\jetified-ads-adservices-java-1.0.0-beta05\res
+com.example.pharmaco.app-jetified-core-ktx-1.9.0-11 C:\Users\YOUSUF\.gradle\caches\transforms-3\bedfac7dd77128654567c22d7fda09e5\transformed\jetified-core-ktx-1.9.0\res
+com.example.pharmaco.app-lifecycle-runtime-2.3.1-12 C:\Users\YOUSUF\.gradle\caches\transforms-3\f5cafe04d1918d9e9ee78bcdea228ac8\transformed\lifecycle-runtime-2.3.1\res
+com.example.pharmaco.app-core-1.9.0-13 C:\Users\YOUSUF\.gradle\caches\transforms-3\fd44423831f6c5017c95bea38d6ea527\transformed\core-1.9.0\res
+com.example.pharmaco.app-debug-14 C:\Users\YOUSUF\Desktop\this is my flutter\FYP-Pharmaco-main\FYP-Pharmaco-main\android\app\src\debug\res
+com.example.pharmaco.app-main-15 C:\Users\YOUSUF\Desktop\this is my flutter\FYP-Pharmaco-main\FYP-Pharmaco-main\android\app\src\main\res
+com.example.pharmaco.app-RES-16 C:\Users\YOUSUF\Desktop\this is my flutter\FYP-Pharmaco-main\FYP-Pharmaco-main\build\app\RES\processDebugGoogleServices
+com.example.pharmaco.app-pngs-17 C:\Users\YOUSUF\Desktop\this is my flutter\FYP-Pharmaco-main\FYP-Pharmaco-main\build\app\generated\res\pngs\debug
+com.example.pharmaco.app-resValues-18 C:\Users\YOUSUF\Desktop\this is my flutter\FYP-Pharmaco-main\FYP-Pharmaco-main\build\app\generated\res\resValues\debug
+com.example.pharmaco.app-rs-19 C:\Users\YOUSUF\Desktop\this is my flutter\FYP-Pharmaco-main\FYP-Pharmaco-main\build\app\generated\res\rs\debug
+com.example.pharmaco.app-mergeDebugResources-20 C:\Users\YOUSUF\Desktop\this is my flutter\FYP-Pharmaco-main\FYP-Pharmaco-main\build\app\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.example.pharmaco.app-mergeDebugResources-21 C:\Users\YOUSUF\Desktop\this is my flutter\FYP-Pharmaco-main\FYP-Pharmaco-main\build\app\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.example.pharmaco.app-merged_res-22 C:\Users\YOUSUF\Desktop\this is my flutter\FYP-Pharmaco-main\FYP-Pharmaco-main\build\app\intermediates\merged_res\debug
+com.example.pharmaco.app-packaged_res-23 C:\Users\YOUSUF\Desktop\this is my flutter\FYP-Pharmaco-main\FYP-Pharmaco-main\build\cloud_firestore\intermediates\packaged_res\debug
+com.example.pharmaco.app-packaged_res-24 C:\Users\YOUSUF\Desktop\this is my flutter\FYP-Pharmaco-main\FYP-Pharmaco-main\build\firebase_auth\intermediates\packaged_res\debug
+com.example.pharmaco.app-packaged_res-25 C:\Users\YOUSUF\Desktop\this is my flutter\FYP-Pharmaco-main\FYP-Pharmaco-main\build\firebase_core\intermediates\packaged_res\debug
+com.example.pharmaco.app-packaged_res-26 C:\Users\YOUSUF\Desktop\this is my flutter\FYP-Pharmaco-main\FYP-Pharmaco-main\build\google_sign_in_android\intermediates\packaged_res\debug
