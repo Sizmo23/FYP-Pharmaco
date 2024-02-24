@@ -1,6 +1,7 @@
 // ignore: file_names
 // ignore_for_file: use_build_context_synchronously
 
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -18,6 +19,7 @@ class _DashboardpageState extends State<Dashboardpage> {
   final searchController = TextEditingController();
   String name = "";
   String currentPage = 'Search';
+  int currentIndex = 1;
 
   void signUserOut(BuildContext context) async {
     try {
@@ -59,33 +61,33 @@ class _DashboardpageState extends State<Dashboardpage> {
       home: Scaffold(
         backgroundColor: const Color.fromARGB(255, 212, 227, 241),
         appBar: AppBar(
-        backgroundColor: Colors.blueAccent[200],
-        title: const Text('Dashboard'),
-        actions: [
-          IconButton(
-            onPressed: () => signUserOut(context),
-            icon: const Icon(Icons.logout),
-          )
-        ],
-      ),
-      drawer: Drawer(
-          child: Container(
-        color: Colors.blue[100],
-        child: ListView(
-          children: [
-            const DrawerHeader(
-                child: Center(
-              child: Text(
-                'Nav',
-                style: TextStyle(fontSize: 25),
-              ),
-            )),
-            buildDrawerItem('Home', Icons.home_filled, Home()),
-            buildDrawerItem('Search', Icons.search, const Dashboardpage()),
+          backgroundColor: Colors.blueAccent[200],
+          title: const Text('Dashboard'),
+          actions: [
+            IconButton(
+              onPressed: () => signUserOut(context),
+              icon: const Icon(Icons.logout),
+            )
           ],
         ),
-      )),
-        body: SingleChildScrollView(
+        drawer: Drawer(
+            child: Container(
+          color: Colors.blue[100],
+          child: ListView(
+            children: [
+              const DrawerHeader(
+                  child: Center(
+                child: Text(
+                  'Nav',
+                  style: TextStyle(fontSize: 25),
+                ),
+              )),
+              buildDrawerItem('Home', Icons.home_filled, Home()),
+              buildDrawerItem('Search', Icons.search, const Dashboardpage()),
+            ],
+          ),
+        )),
+        body: Center(
           child: Column(
             children: [
               const SizedBox(height: 100),
@@ -162,7 +164,7 @@ class _DashboardpageState extends State<Dashboardpage> {
                               color: Colors.grey.withOpacity(0.5),
                               spreadRadius: 2,
                               blurRadius: 5,
-                              offset:const Offset(0, 3),
+                              offset: const Offset(0, 3),
                             ),
                           ],
                           border: Border.all(
@@ -171,10 +173,10 @@ class _DashboardpageState extends State<Dashboardpage> {
                           ),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        margin:const EdgeInsets.all(8),
+                        margin: const EdgeInsets.all(8),
                         child: ListTile(
                           title: Text(
-                            'Name: ${data['name'] }',
+                            'Name: ${data['name']}',
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: const TextStyle(

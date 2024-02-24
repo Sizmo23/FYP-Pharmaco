@@ -615,6 +615,7 @@ class _PharmaDashState extends State<PharmaDash> {
               ),
             ]),
           ),
-        ));
+        )
+      );
   }
 }

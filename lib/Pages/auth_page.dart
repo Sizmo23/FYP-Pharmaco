@@ -1,9 +1,12 @@
+// ignore_for_file: camel_case_types
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pharmaco/Pages/Pharma.dart';
 import 'package:pharmaco/Pages/SignUp.dart';
-import 'package:pharmaco/Pages/homepage.dart';
+import 'package:pharmaco/components/BottomNav.dart';
+import 'package:pharmaco/components/PharmaNav.dart';
 
 class auth_page extends StatefulWidget {
   const auth_page({Key? key});
@@ -24,14 +27,14 @@ class _auth_pageState extends State<auth_page> {
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => const PharmacistHome(splashScreenPath: 'lib/Pages/splash_screen.dart'),
+              builder: (context) => const PharmaNav(),
             ),
           );
         } else {
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => Home(),
+              builder: (context) => const BottomNav(),
             ),
           );
         }

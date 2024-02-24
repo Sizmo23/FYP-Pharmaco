@@ -1,3 +1,4 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pharmaco/Pages/Dashboard.dart';
@@ -13,17 +14,20 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   final user = FirebaseAuth.instance.currentUser!;
   String currentPage = 'Home';
+  int currentIndex = 0;
 
   void signUserOut(BuildContext context) async {
     try {
       await FirebaseAuth.instance.signOut();
       Navigator.of(context).pushReplacement(MaterialPageRoute(
-        builder: (context) => login(),
+        builder: (context) => const login(),
       ));
     } catch (e) {
       print('Error signing out: $e');
     }
   }
+
+  
 
   ListTile buildDrawerItem(String title, IconData icon, Widget destination) {
     return ListTile(
