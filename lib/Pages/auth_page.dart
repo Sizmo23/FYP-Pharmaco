@@ -3,12 +3,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:pharmaco/Pages/Pharma.dart';
 import 'package:pharmaco/Pages/SignUp.dart';
 import 'package:pharmaco/components/BottomNav.dart';
 import 'package:pharmaco/components/PharmaNav.dart';
+import 'package:pharmaco/components/splash_screen.dart';
 
 class auth_page extends StatefulWidget {
+  // ignore: use_key_in_widget_constructors
   const auth_page({Key? key});
 
   @override
@@ -27,19 +28,17 @@ class _auth_pageState extends State<auth_page> {
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => const PharmaNav(),
+              builder: (context) => const splash(nextScreen: PharmaNav()),
             ),
           );
         } else {
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => const BottomNav(),
+              builder: (context) => const splash(nextScreen: BottomNav()),
             ),
           );
         }
-      } else {
-        print('Document does not exist on the database');
       }
     });
   }

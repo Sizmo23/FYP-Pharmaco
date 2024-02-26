@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:lottie/lottie.dart';
-import 'package:pharmaco/Pages/auth_page.dart';
 
 class splash extends StatelessWidget {
-  const splash({super.key});
+  final Widget nextScreen;
+
+  const splash({Key? key, required this.nextScreen}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class splash extends StatelessWidget {
             ),
           ],
         ),
-        nextScreen: const auth_page(),
+        nextScreen: nextScreen,
         splashIconSize: 400,
         backgroundColor: Colors.transparent,
         splashTransition: SplashTransition.fadeTransition,

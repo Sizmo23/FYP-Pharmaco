@@ -24,7 +24,7 @@ class _PharmaNavState extends State<PharmaNav> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    homepage = const PharmacistHome(splashScreenPath: 'lib/Pages/splash_screen.dart');
+    homepage = const PharmacistHome();
     dashboard = const PharmaDash();
     setting = const PharmaSet();
     pages = [homepage, dashboard, setting];
@@ -35,8 +35,8 @@ class _PharmaNavState extends State<PharmaNav> {
     return Scaffold(
       bottomNavigationBar: CurvedNavigationBar(
         height: 65,
-        backgroundColor: const Color.fromARGB(255, 243, 213, 223),
-        color: Color.fromARGB(255, 228, 90, 193),
+        backgroundColor: Colors.transparent,
+        color: const Color.fromARGB(255, 228, 90, 193),
         animationDuration: const Duration(milliseconds: 500),
         onTap: (int index) {
           setState(() {

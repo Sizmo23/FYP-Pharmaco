@@ -3,7 +3,8 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:pharmaco/Pages/Pharma.dart';
+import 'package:pharmaco/Pages/Settings.dart';
+import 'package:pharmaco/components/splash_screen.dart';
 import 'package:pharmaco/objects/pharmacyData.dart';
 import 'package:pharmaco/Pages/login.dart';
 
@@ -22,7 +23,7 @@ class _PharmaDashState extends State<PharmaDash> {
 
   final searchController = TextEditingController();
   String name = "";
-  MyData _obj = MyData();
+  final MyData _obj = MyData();
   String currentPage = 'View';
   final User user = FirebaseAuth.instance.currentUser!;
   int count = 0;
@@ -138,7 +139,7 @@ class _PharmaDashState extends State<PharmaDash> {
                     if (value == null || value.isEmpty) {
                       return 'Registration Number cannot be empty';
                     }
-                    if (int.tryParse(value!) == null) {
+                    if (int.tryParse(value) == null) {
                       return 'Registration Number must be a number';
                     }
                     return null;
@@ -445,7 +446,7 @@ class _PharmaDashState extends State<PharmaDash> {
     try {
       await FirebaseAuth.instance.signOut();
       Navigator.of(context).pushReplacement(MaterialPageRoute(
-        builder: (context) => login(),
+        builder: (context) => const login(),
       ));
     } catch (e) {
       print('Error signing out: $e');
@@ -496,28 +497,86 @@ class _PharmaDashState extends State<PharmaDash> {
             child: const Icon(Icons.add),
           ),
           drawer: Drawer(
-              child: Container(
-            color: Colors.pinkAccent[100],
-            child: ListView(
-              children: [
-                const DrawerHeader(
-                    child: Center(
-                  child: Text(
-                    'Nav',
-                    style: TextStyle(fontSize: 25),
+        elevation: 4,
+        child: Container(
+          color: const Color(0xFF075e54), // Darker greenish-blue drawer color
+          child: Column(
+            children: <Widget>[
+              UserAccountsDrawerHeader(
+                accountName: Text(
+                  getPharmacyName(user.email)!,
+                  style: const TextStyle(color: Colors.white),
+                ),
+                accountEmail: Text(
+                  user.email!,
+                  style: const TextStyle(color: Colors.white),
+                ),
+                currentAccountPicture: const CircleAvatar(
+                  backgroundColor: Colors.white,
+                  child: Icon(
+                    Icons.person,
+                    color: Color(0xFF075e54), // Darker greenish-blue color
                   ),
-                )),
-                buildDrawerItem('Home', Icons.home_filled,const PharmacistHome(splashScreenPath: 'lib/Pages/splash_screen.dart')),
-                buildDrawerItem('View', Icons.medication, const PharmaDash()),
-              ],
-            ),
-          )),
+                ),
+                decoration: const BoxDecoration(
+                  color: Color(0xFF075e54), // Darker greenish-blue header color
+                ),
+              ),
+              ListTile(
+                leading: const Icon(Icons.home, color: Colors.white),
+                title: const Text(
+                  'Home',
+                  style: TextStyle(color: Colors.white),
+                ),
+                onTap: () => {},
+              ),
+              ListTile(
+                leading:
+                    const Icon(Icons.dashboard_rounded, color: Colors.grey),
+                title: const Text(
+                  'Dashboard',
+                  style: TextStyle(color: Colors.grey),
+                ),
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) =>
+                          const splash(nextScreen: PharmaDash())));
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.settings, color: Colors.grey),
+                title: const Text(
+                  'Settings',
+                  style: TextStyle(color: Colors.grey),
+                ),
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const Settings()));
+                },
+              ),
+              const Divider(
+                color: Colors.white,
+              ),
+              ListTile(
+                leading: const Icon(Icons.logout, color: Colors.grey),
+                title: const Text(
+                  'Logout',
+                  style: TextStyle(color: Colors.grey),
+                ),
+                onTap: () => {
+                  signUserOut(context)
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
           body: SingleChildScrollView(
             child: Column(children: [
               SizedBox(
                 height: 100,
                 child: Text(
-                  "${create(user.email!)} database",
+                  "${getPharmacyName(user.email)} Database",
                   style: const TextStyle(
                     fontSize: 45,
                     fontWeight: FontWeight.bold,
@@ -538,8 +597,8 @@ class _PharmaDashState extends State<PharmaDash> {
                     if (medicinesList.isNotEmpty) {
                       return SingleChildScrollView(
                         child: DataTable(
-                          columnSpacing: 5,
-                          horizontalMargin: 30,
+                          columnSpacing: 10,
+                          horizontalMargin: 10,
                           sortColumnIndex: 0,
                           sortAscending: true,
                           columns: const [
@@ -548,9 +607,6 @@ class _PharmaDashState extends State<PharmaDash> {
                             ),
                             DataColumn(
                               label: Text('Brand Name'),
-                            ),
-                            DataColumn(
-                              label: Text('Company Name'),
                             ),
                             DataColumn(
                               label: Text('Market Price'),
@@ -567,9 +623,6 @@ class _PharmaDashState extends State<PharmaDash> {
                                 ),
                                 DataCell(
                                   Text('${medicine['Brand Name']}'),
-                                ),
-                                DataCell(
-                                  Text('${medicine['companyName']}'),
                                 ),
                                 DataCell(
                                   Text('${medicine['Market Price']}'),
