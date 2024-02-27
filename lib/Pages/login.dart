@@ -2,6 +2,7 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:pharmaco/Pages/forgot.dart';
 import 'package:pharmaco/Services/auth_services.dart';
 import 'package:pharmaco/Pages/SignUp.dart';
@@ -17,6 +18,7 @@ class login extends StatefulWidget {
 }
 
 class _loginState extends State<login> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
@@ -220,7 +222,9 @@ class _loginState extends State<login> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Square_tile(
-                          onTap: () => AuthService().signinWithGoogle(),
+                          onTap: () async {
+                            AuthService().SignInWithGoogle();
+                          },
                           imagePath: 'lib/images/GoogleLogo.png'),
                     ],
                   ),

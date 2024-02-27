@@ -167,7 +167,6 @@ class _DashboardpageState extends State<Dashboardpage> {
                               builder: (context) => ProductPage(
                                 name: data['name'],
                                 netPrice: data['Net_Price'],
-                                // Add any other relevant data here
                               ),
                             ),
                           );

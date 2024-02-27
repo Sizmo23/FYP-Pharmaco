@@ -3,6 +3,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:pharmaco/Services/auth_services.dart';
 import 'package:pharmaco/components/Signup_button.dart';
 import 'package:pharmaco/components/square_tile.dart';
@@ -10,7 +11,6 @@ import 'package:pharmaco/components/username_textfeild.dart';
 import 'package:pharmaco/Pages/login.dart';
 
 class SignUp extends StatefulWidget {
-  final FirebaseAuth _auth = FirebaseAuth.instance;
   SignUp({super.key});
 
   @override
@@ -18,6 +18,7 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
   final useremailController = TextEditingController();
 
   final usernameController = TextEditingController();
@@ -150,7 +151,9 @@ class _SignUpState extends State<SignUp> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Square_tile(
-                          onTap: () => AuthService().signinWithGoogle(),
+                          onTap: () async {
+                            AuthService().SignInWithGoogle();
+                          },
                           imagePath: 'lib/images/GoogleLogo.png'),
                     ],
                   ),
